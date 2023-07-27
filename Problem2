@@ -1,0 +1,27 @@
+PROCEDURE dot_product(v1,v2:array_of_FLOAT[50])
+VAR
+ ps:FLOAT:=0
+
+BEGIN
+   FOR i FROM 0 TO v1.length-1  DO
+   ps:=ps+(v1[i]*v2[i])
+   END_FOR
+IF (ps==0) THEN
+    the message :="the 2 vectors are orthogonals"
+ELSE
+    message:="the 2 vectors are not olrthogonals"
+END_IF
+    write (message)
+END
+
+ALGORITHM dot_product
+VAR
+    v1,v2:array_of_FLOAT[50]
+    dot:FLOAT:=0
+BEGIN
+      REPEAT
+        read (v1)
+        read (v2)
+    UNTIL (v1.length==v2.length)
+    dot_product(v1,v2)
+END
