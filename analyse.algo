@@ -1,0 +1,28 @@
+def analyze_sentence(sentence):
+    # Initialize counters
+    i = 0  # i for sentence length
+    j = 1  # j for word count (start with 1 to account for the last word after the last space)
+    k = 0  # k for vowel count
+
+    # Define a set of vowels for easy comparison
+    vowels = {'a', 'e', 'i', 'o', 'u'}
+
+    # Iterate through each character in the sentence
+    for char in sentence:
+        i += 1
+
+        if char.lower() in vowels:
+            k += 1
+
+        if char == ' ':
+            j += 1
+
+    return i, j, k
+
+# Example usage:
+sentence_input = input("Enter a sentence (ending with a period): ")
+result = analyze_sentence(sentence_input)
+
+print("i (Length of the sentence):", result[0])
+print("j (Number of words in the sentence):", result[1])
+print("k (Number of vowels in the sentence):", result[2])
