@@ -41,4 +41,3 @@ begin
   for i := 1 to n do
     Write(arr[i], ' ');
 end.
-
